@@ -1,0 +1,53 @@
+.photolistcont{
+    position: relative;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.photolistcont button{
+    top: -12px;
+}
+
+.photoitem{
+    margin: 15px;
+  padding: 20px;
+  border: 3px solid #000;
+  transition: all .15s linear;
+}
+
+.photoitem:hover{
+    transform: scale(1.06);
+    border-color: orangered;
+}
+
+.picthumb{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width:560px) {
+    .photolistcont{
+        width: 90vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    button{
+        padding: 6px 10px;
+    }
+
+    .photoitem{
+        margin: 0;
+        padding: 8px;
+    }
+}

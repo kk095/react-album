@@ -1,0 +1,23 @@
+.container{
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;   
+}
+
+img.loading{
+    height: 80px;
+    width: 80px;
+    animation: loadin 1.2s linear infinite;  
+}
+
+@keyframes loadin {
+    from {
+        transform: rotate(0);
+      }
+      
+      to {
+        transform: rotate(360deg);
+      }
+}
+

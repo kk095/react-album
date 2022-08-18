@@ -1,0 +1,15 @@
+.tiltlecont{
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.titleh2{
+    text-align: center;
+}
+
+@media screen and (max-width:560px) {
+    .titleh2{
+        font-size: 15px;
+        margin-left: 20px;
+    }
+}
