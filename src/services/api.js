@@ -7,6 +7,9 @@ export const api = {
   async getAlbums() {
     const response = await axiosInstance(`/albums`);
     return response.data;
+    // const response = await fetch("https://jsonplaceholder.typicode.com/albums");
+    // console.log(response);
+    // return response.data;
   },
 
   async getAlbumTitle(albumID) {

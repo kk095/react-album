@@ -7,7 +7,7 @@ import { PageNotFound } from "../pages/PageNotFound/index.js";
 
 export const MainRoutes = () => {
   return useRoutes([
-    { path: "/", element: <AlbumList /> },
+    { path: "*", element: <AlbumList /> },
     { path: "/albums/:albumID", element: <PhotoList /> },
     { path: "/photos/:photoID", element: <Photo /> },
     { path: "*", element: <PageNotFound /> },
