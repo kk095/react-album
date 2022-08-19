@@ -8,12 +8,15 @@ import "./styles.css";
 import { api } from "../../services/api.js";
 import { Loading } from "../../shared/Loading/index.js";
 
+// function based component
 export const AlbumList = () => {
+  // states of this component
   const [albums, setAlbums] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [mytitle, settitle] = useState("");
   const [editbtn, setbtn] = useState(true);
 
+  // in this , we are calling albumlist from services folder
   useEffect(() => {
     const getAlbumList = async () => {
       try {
@@ -31,6 +34,7 @@ export const AlbumList = () => {
     getAlbumList();
   }, []);
 
+  // on clicking delete album button
   const delAlbum = async function (e, id) {
     try {
       let delItem = await api.delAlbum(id);
@@ -42,10 +46,12 @@ export const AlbumList = () => {
     }
   };
 
+  // when change in edit form input
   const editformInput = (e) => {
     settitle(e.target.value);
   };
 
+  // when click album edit form
   const editAlbum = function (e, title, id) {
     settitle(title);
     console.log(e.target);
@@ -54,6 +60,7 @@ export const AlbumList = () => {
     setbtn(false);
   };
 
+  // when submit edit album form
   const editFormSubmit = async function (e, id) {
     try {
       e.preventDefault();

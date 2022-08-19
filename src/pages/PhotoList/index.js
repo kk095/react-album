@@ -10,11 +10,13 @@ import { Loading } from "../../shared/Loading/index.js";
 import { Title } from "../../shared/Title/index.js";
 
 export const PhotoList = () => {
+  // states of this component
   const [photos, setPhotos] = useState([]);
   const [albumTitle, setAlbumTitle] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { albumID } = useParams();
 
+  // this will call getphoto function from services so that all photos will render
   useEffect(() => {
     const getPhotoList = async () => {
       if (albumID) {

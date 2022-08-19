@@ -4,29 +4,31 @@ const axiosInstance = axios.create({
 });
 
 export const api = {
+  // to fetch all albums
   async getAlbums() {
     const response = await axiosInstance(`/albums`);
     return response.data;
-    // const response = await fetch("https://jsonplaceholder.typicode.com/albums");
-    // console.log(response);
-    // return response.data;
   },
 
+  // to fetch particular album info
   async getAlbumTitle(albumID) {
     const response = await axiosInstance(`/albums/${albumID}`);
     return response.data.title;
   },
 
+  // to get all photos of particular album
   async getPhotos(albumID) {
     const response = await axiosInstance(`albums/${albumID}/photos`);
     return response.data;
   },
 
+  // to get particaular photo from photos of particular album
   async getPhoto(photoID) {
     const response = await axiosInstance(`/photos/${photoID}`);
     return response.data;
   },
 
+  // to add new album
   async addAlbum(userid, id, title) {
     try {
       let data = {
@@ -49,6 +51,7 @@ export const api = {
     }
   },
 
+  // to delete particular album
   async delAlbum(delid) {
     const delId = delid;
     let del = await axios.delete(
@@ -57,6 +60,7 @@ export const api = {
     return del;
   },
 
+  // to edit or update the particular album
   async editAlbum(id, title) {
     const newtitle = {
       title: title,

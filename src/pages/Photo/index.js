@@ -9,10 +9,12 @@ import { Loading } from "../../shared/Loading/index.js";
 import { Title } from "../../shared/Title/index.js";
 
 export const Photo = () => {
+  // states of this components
   const [photo, setPhoto] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const { photoID } = useParams();
 
+  // this function will call getphotos function from services folder
   useEffect(() => {
     const getPhotoUrl = async () => {
       if (photoID) {

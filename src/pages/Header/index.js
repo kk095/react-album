@@ -3,15 +3,18 @@ import "./styles.css";
 import { api } from "../../services/api.js";
 
 export const Header = () => {
+  // states of this component
   const [userid, setuserid] = useState("");
   const [id, setid] = useState("");
   const [title, settitle] = useState("");
   const [dis, setdis] = useState(true);
 
+  // clicked on new button
   const handleNewBtn = (e) => {
     setdis(false);
   };
 
+  // change in the new album form input
   const inputChange = (e) => {
     const name = e.target.name;
     if (name === "userid") {
@@ -23,6 +26,7 @@ export const Header = () => {
     }
   };
 
+  // when new album form is submit
   async function formClicked(e) {
     e.preventDefault();
     try {
